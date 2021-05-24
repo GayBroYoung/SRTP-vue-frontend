@@ -73,9 +73,16 @@ export default{
         },
         acquire_data() {
             var url = "api/get_current_evaluation"
-            var params = {
+            var is_stroe = false
+            this.counter ++ ;
+            if(this.counter >= 60){
+                this.counter = 0
+                is_stroe = true
+            }
+            let params = {
                 "course_id" : this.course_id,
-                "index" : this.course_index
+                "index" : this.course_index,
+                "appendix":is_stroe
             }
             console.log(this.course_index)
             this.$axios.post(url,params)
@@ -92,6 +99,7 @@ export default{
     },
     data(){
         return {
+            counter : 0,
             timer_id : -1,
             page_video : null,
             nr_offline:0,

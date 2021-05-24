@@ -136,10 +136,10 @@ export default {
 	mounted() {
 		console.log(this.course);
 		this.linechart = echarts.init(document.getElementById('line'))
-		this.linechart.setOption(this.line_chart_data,true)
+		// this.linechart.setOption(this.line_chart_data,true)
 
 		this.rateChart = echarts.init(document.getElementById('pie'))
-		this.rateChart.setOption(this.pie_chart_data)
+		// this.rateChart.setOption(this.pie_chart_data)
 		this.$axios.get("api/get_course_info/" + this.course.id)
 		.then(res => {
 			this.course_history = res.data.course_history
@@ -212,7 +212,7 @@ export default {
 				dis.push(element.nr_distracted)
 				con.push(element.nr_concentrated)
 				off.push(element.nr_offline)
-				dat.push(`${i}`)
+				dat.push(`${i}分钟`)
 				i++;
 			});
 			if(this.eval.length > 0){

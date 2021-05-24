@@ -28,7 +28,7 @@ export default {
         this.student_id = this.$route.params.student_id
         this.course_id = this.$route.params.course_id
         this.course_index = this.$route.params.course_index
-        this.timer_id = setInterval(this.get_result,2000)
+        this.timer_id = setInterval(this.get_result,1000)
     },
     beforeRouteLeave (to, from, next) {
         clearInterval(this.timer_id)

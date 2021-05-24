@@ -13,12 +13,6 @@ const router = createRouter({
 			component: ()=> import('/src/views/StudentCourse.vue')
 		},
 		{
-			path:'/home',
-			component:{
-				template:`<h1>HOME</h1>`
-			}
-		},
-		{
 			path: '/login',
 			component: ()=> import('/src/views/Login.vue')
 		},
@@ -32,7 +26,7 @@ const router = createRouter({
 		},
 		{
 			path: '/',
-			redirect:'/home'
+			redirect:'/login'
 		}
 	]
 })

@@ -31,6 +31,7 @@ export default {
 			var param = {
 				"teacher_id" : this.input_id
 			}
+			console.log(url)
 			this.$axios.post(url,param)
 			.then(res => {
 				var data = res.data
